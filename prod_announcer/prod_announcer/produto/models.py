@@ -24,16 +24,9 @@ class Produto(models.Model):
 	estoque_produto = models.Model.IntegerField("Preço", max_digits=7)
 	foto_produto = models.URLField(max_length=250, verify_exists=True, blank=False)
 	info_produto = models.TextField("Informações do Produto", max_length=250)
-	forma_pag_produto
 	emOferta_produto = models.BooleanField("Produto em Oferta ?", default=False, blank=True)
+	#forma_pag_produto
 
+	def __unicode__(self):
+	return "%s - %s - %s - %s -%s - %s - %s" % (self.nome_produto, self.fabricante_produto, self.preco_produto, self.estoque_produto, self.foto_produto, self.info_produto, self.emOferta_produto)
 
-
-
-
-
-
-label = models.CharField("Label", max_length=250)
-
-def __unicode__(self):
- return self.content
