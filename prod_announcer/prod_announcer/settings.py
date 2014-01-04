@@ -1,10 +1,17 @@
 # Django settings for prod_announcer project.
 
+import os
+
+LOCAL = lambda x: os.path.join(os.path.sep.join(
+                os.path.abspath(
+                     os.path.dirname(__file__)).split(os.path.sep)), x) 
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Guilherme da Costa de Albuquerque', 'guilherme.albuquerque@uniriotec.br'),
+    ('Paulo Cesar Matos Inacio', 'paulo.incacio@uniriotec.br'),
 )
 
 MANAGERS = ADMINS
@@ -29,11 +36,11 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Sao_Paulo'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 SITE_ID = 1
 
@@ -121,7 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
