@@ -1,4 +1,5 @@
-*.log
-*.pot
+#Django
 *.pyc
-local_settings.py
+*.sqlite*
+
+
