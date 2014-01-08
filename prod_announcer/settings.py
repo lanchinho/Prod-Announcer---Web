@@ -121,6 +121,7 @@ INSTALLED_APPS = (
     'prod_announcer.loja_fisica',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'annoying'
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

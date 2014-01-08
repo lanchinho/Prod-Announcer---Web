@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -91,7 +90,7 @@
             <a class="brand" href="#">Nome da Loja</a>
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="{% url "cadastro_produto" %}">Cadastrar Loja</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
@@ -106,8 +105,10 @@
 
   </head>
 
+  <body>
     {% block content %}
     {% endblock %}
+  </body>
 
   <footer>
   {% block footer %}
