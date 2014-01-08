@@ -49,9 +49,18 @@ footer,
 header,
 hgroup,
 nav,
-section {
-  display: block;
+{
+  display: block;  
 }
+
+section{
+display: block; 
+padding-top: 150px;
+padding-left: 10%;
+padding-right: 10%;
+}
+}
+
 
 audio,
 canvas,
@@ -619,6 +628,8 @@ a:focus {
   margin-left: auto;
   *zoom: 1;
 }
+
+
 
 .container:before,
 .container:after {
@@ -1842,6 +1853,13 @@ input.search-query {
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
+}
+
+.form-signin {
+max-width: 330px;
+padding: 15px;
+margin: 0 auto;
+margin-top: 150px
 }
 
 .form-search .input-append .search-query {

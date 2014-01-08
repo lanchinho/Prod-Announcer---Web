@@ -1,7 +1,8 @@
 {% extends "utils/base.html"%}
 {% block content %}
-   <h2> Cadastro de Produto</h2>
-   <sectio>
+  
+   <section>
+   		<h2> Cadastro de Produto</h2>
    	   <form action="{%url 'cadastro_produto' %}" METHOD='POST'>
                {% csrf_token %}
                {{ form.as_p }}
@@ -9,3 +10,5 @@
            </form>
    </section>
 {% endblock %}
+
+
