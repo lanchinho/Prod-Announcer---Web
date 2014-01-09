@@ -11,7 +11,7 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Guilherme da Costa de Albuquerque', 'guilherme.albuquerque@uniriotec.br'),
-    ('Paulo Cesar Matos Inacio', 'paulo.incacio@uniriotec.br'),
+    ('Paulo Cesar Matos Inacio', 'paulo.inacio@uniriotec.br'),
 )
 
 MANAGERS = ADMINS
