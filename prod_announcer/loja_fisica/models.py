@@ -11,7 +11,7 @@ class Loja(models.Model):
     nome_loja = models.CharField("Nome da Loja", max_length=250)
     email_loja = models.EmailField("Email da Loja", max_length=250)
     site_loja = models.URLField("Site", max_length=250, blank=True)
-    cnpj_loja = models.CharField("Nome de Usuário", max_length=250)
+    cnpj_loja = models.CharField("CNPJ", max_length=250)
     senha = models.CharField("Senha", max_length=14) 
     representante_loja = models.CharField("Representante da Loja", max_length=250)
     representante_telefone = models.CharField("Telefone do Representante", max_length=40)
@@ -25,4 +25,4 @@ class Loja(models.Model):
         verbose_name = "Loja"
 
     def __unicode__(self):
-        return "%s - %s - %s - %s - %s - %s - %s - %s - %s - %s - %s - %s" % (self.nome_loja, self.email_loja, self.site_loja, self.login_loja, self.senha, self.confirmar_senha, self.representante_loja, self.representante_telefone, self.estado_loja, self.cidade_loja, self.bairro_loja, self.cep_loja)
+        return "%s - %s - %s - %s - %s - %s - %s - %s - %s - %s - %s" % (self.nome_loja, self.email_loja, self.site_loja, self.cnpj_loja, self.senha, self.representante_loja, self.representante_telefone, self.estado_loja, self.cidade_loja, self.bairro_loja, self.cep_loja)
