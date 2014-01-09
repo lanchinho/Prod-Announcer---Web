@@ -12,8 +12,4 @@ urlpatterns = patterns('',
     
     url(r'^', include('prod_announcer.produto.urls')),
     url(r'^', include('prod_announcer.loja_fisica.urls')),
-
-    #login / logout
-    #url(r'^login/$', 'django.contrib.auth.views.login'),
-    #url(r'^logout/$', logout_page),  
 )

@@ -65,8 +65,6 @@ STATIC_ROOT = LOCAL('static_root')
 
 STATIC_URL = '/static/'
 
-#LOGIN_URL = '/login/' #Adicionado 08/01
-
 STATICFILES_DIRS = (
     LOCAL('static'),
 )
