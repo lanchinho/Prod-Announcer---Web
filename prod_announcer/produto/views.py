@@ -23,3 +23,25 @@ def cadastrar_produto(request):
     return {
         'form': form,
     }    		
+
+
+
+def _get_dados_listar_produtos(tipo_produto):
+    produtos = []
+    titulo_produtos = ""
+    if tipo_produto == 'produto':
+        produtos = Produto.objects.all()
+        titulo_produtos = "Produtos"
+
+    else:
+        raise Http404
+
+    return {'produtos' : produtos, 'titulo_produtos' : titulo_produtos, 'tipo_produto': tipo_produto}
+
+
+
+@render_to("listagem_produto.html")
+def listar_produtos(request):
+
+    dados_produtos = _get_dados_listar_produtos("produto")
+    return dados_produtos

@@ -1,7 +1,7 @@
 {% extends "utils/base.html"%}
 {% block content %}
     <div class="container">
-      <form class="form-signin">
+      <form class="form-signin" action="{%url 'cadastro_produto' %}" METHOD='POST'>
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" class="input-block-level" placeholder="CNPJ">
         <input type="password" class="input-block-level" placeholder="Password">
@@ -12,4 +12,6 @@
       </form>
     </div> <!-- /container -->  
 {% endblock %}
+
+
 

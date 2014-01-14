@@ -6183,3 +6183,79 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+
+
+/* ========= Sub Content ========== */      
+      
+#subcontent { 
+  width: 960px; 
+  margin: 180px auto 0 auto;
+}
+
+#subcontent a{
+  color: #44601e;
+} 
+
+#subcontent ul {
+  margin: -20px 0px 40px 0px;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  
+}
+
+#subcontent ul li{
+  position: relative;
+}
+
+#subcontent li ul {
+  display: none;
+  left: 0;
+  margin-top: -1px;
+  font-family: "Arial";
+  font-size: 12px;
+  position: absolute;
+  background-color:#b5e775; 
+}
+
+#subcontent ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+}
+
+#subcontent li:hover ul { 
+  display: block; 
+  
+}
+
+#subcontent ul li ul li a:hover {
+  text-decoration: underline;
+  background-color:#bde788;
+
+}
+
+  
+/* =========== Content =========== */
+
+#content {
+  width: 980px;
+  margin: 25px auto 40px;
+}
+
+#aviso h6{
+  text-align: center;
+  font-style: italic;
+  
+
+}
+
+.entry-content { 
+  margin-right: 10px;  
+  padding-bottom: 10px; 
+} 
+
+.half { 
+  width: 460px; 
+}
+

@@ -23,3 +23,7 @@ class Produto(models.Model):
 	def __unicode__(self):
 		return "%s - %s - %s - %s -%s - %s - %s" % (self.nome_produto, self.fabricante_produto, self.preco_produto, self.estoque_produto, self.foto_produto, self.info_produto, self.em_oferta_produto)
 
+	def get_nome_or_razao(self):
+		return self.nome_produto
+
+
