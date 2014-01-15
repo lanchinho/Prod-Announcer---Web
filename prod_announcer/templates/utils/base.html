@@ -91,7 +91,7 @@
             <div class="nav-collapse collapse">
               <ul class="nav">
                 <li class="active"><a href="{% url "cadastro_produto" %}">Cadastrar Produtos</a></li>
-               <li><a href="{% url "listagem_produto" %}">Meus Produtos</a></li>
+               <li><a href="{% url 'listar_produtos' tipo_produto='produto' %}">Meus Produtos</a></li>
                 <li><a href="{% url "redefinir_senha" %}">Redefinir Senha</a></li>
               </ul>
             </div><!--/.nav-collapse -->

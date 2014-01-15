@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
-class Produto(models.Model):
+class NomeDoProduto(object):
+
+	def get_nome_produto(self):
+		return self.nome_produto
+
+class Produto(models.Model, NomeDoProduto):
 	"""
 	Classe responsável por representar um Produto.
 	"""
@@ -14,7 +19,7 @@ class Produto(models.Model):
 	foto_produto = models.URLField("Foto do Produto",max_length=250, blank=False)
 	info_produto = models.TextField("Informações do Produto", max_length=250)
 	em_oferta_produto = models.BooleanField("Produto em Oferta ?", default=False, blank=True)
-	#forma_pag_produto
+
 
 	class Meta:
 		verbose_name = "Produto"
@@ -23,7 +28,5 @@ class Produto(models.Model):
 	def __unicode__(self):
 		return "%s - %s - %s - %s -%s - %s - %s" % (self.nome_produto, self.fabricante_produto, self.preco_produto, self.estoque_produto, self.foto_produto, self.info_produto, self.em_oferta_produto)
 
-	def get_nome_or_razao(self):
-		return self.nome_produto
 
 
