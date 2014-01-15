@@ -1,0 +1,20 @@
+{% extends "utils/base.html"%}
+{% block page-title %}{{ block.super }} - Lista de {{ titulo_produtos }}{% endblock %}
+{% block content %}
+<div id="subcontent">
+       <h2>Listagem de {{ titulo_produtos }}</h2>
+
+       <div class="clear"></div>
+</div> <!-- End subcontent id -->
+
+<div id="content">
+    {% for produto in produtos %}
+        <section class="produtos-{% cycle 'odd' 'even' %}">
+            <a href="{% url 'detalhar_produto' tipo_produto=tipo_produto id_produto=produto.pk %}" target="_blank">
+                {{ produto.get_nome_or_razao }}
+            </a>
+        </section>
+    {% endfor %}
+</div> <!--- End content id --->
+
+{% endblock %}
