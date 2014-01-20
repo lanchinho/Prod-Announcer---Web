@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.core.validators import RegexValidator
 
 class Loja(models.Model):
     """
@@ -11,14 +12,14 @@ class Loja(models.Model):
     nome_loja = models.CharField("Nome da Loja", max_length=250)
     email_loja = models.EmailField("Email da Loja", max_length=250)
     site_loja = models.URLField("Site", max_length=250, blank=True)
-    cnpj_loja = models.CharField("CNPJ", max_length=250)
+    cnpj_loja = models.CharField("CNPJ",max_length=20)
     senha = models.CharField("Senha", max_length=14) 
     representante_loja = models.CharField("Representante da Loja", max_length=250)
     representante_telefone = models.CharField("Telefone do Representante", max_length=40)
     estado_loja = models.CharField("Estado", max_length=250)
     cidade_loja = models.CharField("Cidade", max_length=250)
     bairro_loja = models.CharField("Bairro", max_length=250)
-    cep_loja = models.CharField("Cep", max_length=250)
+    cep_loja = models.CharField("Cep", max_length=10, validators=[RegexValidator(regex=r'^[0-9]{5}-[0-9]{3}$', message='CEP inválido'),])
 
     class Meta:
         verbose_name_plural = "Lojas"
