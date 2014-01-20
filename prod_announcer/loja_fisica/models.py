@@ -15,11 +15,11 @@ class Loja(models.Model):
     cnpj_loja = models.CharField("CNPJ",max_length=20)
     senha = models.CharField("Senha", max_length=14) 
     representante_loja = models.CharField("Representante da Loja", max_length=250)
-    representante_telefone = models.CharField("Telefone do Representante", max_length=40)
+    representante_telefone = models.CharField("Telefone do Representante", max_length=15, validators=[RegexValidator(regex=r'^\((10)|([1-9][1-9])\)[2-9][0-9]{3}-[0-9]{4}|[2-9][0-9]{4}-[0-9]{4}$', message='Número de Telefone Inválido'),])
     estado_loja = models.CharField("Estado", max_length=250)
     cidade_loja = models.CharField("Cidade", max_length=250)
     bairro_loja = models.CharField("Bairro", max_length=250)
-    cep_loja = models.CharField("Cep", max_length=10, validators=[RegexValidator(regex=r'^[0-9]{5}-[0-9]{3}$', message='CEP inválido'),])
+    cep_loja = models.CharField("Cep", max_length=10, validators=[RegexValidator(regex=r'^[0-9]{5}-[0-9]{3}$', message='CEP Inválido'),])
 
     class Meta:
         verbose_name_plural = "Lojas"
