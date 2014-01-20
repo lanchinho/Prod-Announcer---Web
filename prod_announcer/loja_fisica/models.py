@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 
 class Loja(models.Model):
@@ -8,12 +9,12 @@ class Loja(models.Model):
     """
     "Pesquisar como faremos para tratar a imagem da loja, link para a img ou subir a imagem para o banco ?"
     "estudar uma maneira de como por tamanho minimo"
-
+    
+    #user = models.ForeignKey(User)
     nome_loja = models.CharField("Nome da Loja", max_length=250)
     email_loja = models.EmailField("Email da Loja", max_length=250)
     site_loja = models.URLField("Site", max_length=250, blank=True)
     cnpj_loja = models.CharField("CNPJ",max_length=20, validators=[RegexValidator(regex=r'^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$', message='CNPJ Inválido'),])
-    senha = models.CharField("Senha", max_length=14) 
     representante_loja = models.CharField("Representante da Loja", max_length=250)
     representante_telefone = models.CharField("Telefone do Representante", max_length=15, validators=[RegexValidator(regex=r'^\((10)|([1-9][1-9])\)[2-9][0-9]{3}-[0-9]{4}|[2-9][0-9]{4}-[0-9]{4}$', message='Número de Telefone Inválido'),])
     estado_loja = models.CharField("Estado", max_length=250)
