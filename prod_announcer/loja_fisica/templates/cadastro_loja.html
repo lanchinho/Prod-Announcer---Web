@@ -1,0 +1,15 @@
+{% extends "utils/base.html"%}
+{% block content %}
+  
+   <section>
+   		<h2> Cadastro da Loja</h2>
+   	   <form action="{%url 'cadastro_loja' %}" METHOD='POST'>
+               {% csrf_token %}
+               {{ user_form.as_p }}
+               {{ loja_form.as_p }}
+               <input type="submit" value="Cadastrar"/>
+           </form>
+   </section>
+{% endblock %}
+
+

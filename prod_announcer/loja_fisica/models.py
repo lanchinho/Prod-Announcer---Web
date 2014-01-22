@@ -6,11 +6,9 @@ from django.core.validators import RegexValidator
 class Loja(models.Model):
     """
     Model responsável por representar uma Loja Física
-    """
-    "Pesquisar como faremos para tratar a imagem da loja, link para a img ou subir a imagem para o banco ?"
-    "estudar uma maneira de como por tamanho minimo"
+    """    
     
-    #user = models.ForeignKey(User)
+    user = models.OneToOneField(User)
     nome_loja = models.CharField("Nome da Loja", max_length=250)
     email_loja = models.EmailField("Email da Loja", max_length=250)
     site_loja = models.URLField("Site", max_length=250, blank=True)
@@ -27,4 +25,4 @@ class Loja(models.Model):
         verbose_name = "Loja"
 
     def __unicode__(self):
-        return "%s - %s - %s - %s - %s - %s - %s - %s - %s - %s - %s" % (self.nome_loja, self.email_loja, self.site_loja, self.cnpj_loja, self.senha, self.representante_loja, self.representante_telefone, self.estado_loja, self.cidade_loja, self.bairro_loja, self.cep_loja)
+        return "%s - %s - %s - %s - %s - %s - %s - %s - %s - %s - %s - %s" % (self.user.username, self.nome_loja, self.email_loja, self.site_loja, self.cnpj_loja, self.senha, self.representante_loja, self.representante_telefone, self.estado_loja, self.cidade_loja, self.bairro_loja, self.cep_loja)

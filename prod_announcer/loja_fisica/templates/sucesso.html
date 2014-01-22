@@ -1,0 +1,8 @@
+{% extends "utils/base.html"%}
+{% block content %}
+<section>
+   <h1> SUCESSO ! </h1>
+      <p>Sua Loja foi cadastrada com sucesso.</p>
+      <button onclick="window.location.href='{% url "index" %}'">Voltar para a página inicial</button>
+</section>
+{% endblock %}
