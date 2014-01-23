@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*
-from django.http import Http404
+from django.contrib.auth import authenticate, login
+from django.http import Http404, HttpResponse
 from django.shortcuts import redirect, get_object_or_404
 
 from annoying.decorators import render_to
@@ -34,6 +35,29 @@ def cadastrar_loja(request):
 	return{
 	    'user_form': user_form, 'loja_form': loja_form, 'registered': registered
 	}	
+
+@render_to("login.html")
+def user_login(request):
+
+	if request.method == 'POST':
+	   username = request.POST.get('username', False)
+	   password = request.POST.get('password', False)
+
+	   user = authenticate(username=username, password=password)
+
+	   if user is not None:
+	   	  if user.is_active:
+	   	  	  login(request, user)
+	   	  	  #Criar uma página index
+	   	  	  return redirect('index')
+	   	  else:
+	   	  	  return HttpResponse("Sua conta Prod-Announcer encontra - se desativada")
+	   else:
+	       print "Informações de Login inválidas: {0}, {1}".format(username, password)
+	       return HttpResponse("As informações de login fornecidas são inválidas!")
+	else:
+		return{}     	  
+
 
 
 
