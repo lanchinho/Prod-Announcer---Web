@@ -26,4 +26,4 @@ class Loja(models.Model):
         verbose_name = "Loja"
 
     def __unicode__(self):
-        return "%s - %s - %s - %s - %s - %s - %s - %s - %s - %s - %s" % (self.user.username, self.nome_loja, self.email_loja, self.site_loja, self.cnpj_loja, self.representante_loja, self.representante_telefone, self.estado_loja, self.cidade_loja, self.bairro_loja, self.cep_loja)
+        return "%s - %s - %s - %s - %s - %s - %s - %s - %s - %s - %s -%s"% (self.user.username, self.nome_loja, self.email_loja, self.site_loja, self.cnpj_loja, self.representante_loja, self.representante_telefone, self.estado_loja, self.cidade_loja, self.bairro_loja, self.cep_loja, self.loja_centroComercial)
