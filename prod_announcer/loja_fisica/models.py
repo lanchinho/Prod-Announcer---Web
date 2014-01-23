@@ -19,7 +19,8 @@ class Loja(models.Model):
     cidade_loja = models.CharField("Cidade", max_length=250)
     bairro_loja = models.CharField("Bairro", max_length=250)
     cep_loja = models.CharField("Cep", max_length=10, validators=[RegexValidator(regex=r'^[0-9]{5}-[0-9]{3}$', message='CEP Inválido'),])
-
+    loja_centroComercial = models.BooleanField("Loja Pertence a centro comercial?", default=False, blank=True)
+    
     class Meta:
         verbose_name_plural = "Lojas"
         verbose_name = "Loja"
