@@ -9,7 +9,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
 
     url(r'^$', TemplateView.as_view(template_name="index.html"), name='index'),
-    url(r'^login/$', views.user_login, name='login'), 
+    url(r'^login/$', 'django.contrib.auth.views.login', name='login'), 
+
     url(r'^admin/', include(admin.site.urls)),
     
     url(r'^', include('prod_announcer.produto.urls')),

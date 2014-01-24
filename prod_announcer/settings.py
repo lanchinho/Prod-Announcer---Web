@@ -1,4 +1,5 @@
 # Django settings for prod_announcer project.
+from django.core.urlresolvers import reverse_lazy
 
 import os
 
@@ -64,6 +65,10 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = LOCAL('static_root')
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = '/login'
+
+LOGIN_REDIRECT_URL = reverse_lazy('cadastro_produto')
 
 STATICFILES_DIRS = (
     LOCAL('static'),

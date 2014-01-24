@@ -36,27 +36,27 @@ def cadastrar_loja(request):
 	    'user_form': user_form, 'loja_form': loja_form, 'registered': registered
 	}	
 
-@render_to("login.html")
-def user_login(request):
+#@render_to("login.html")
+#def user_login(request):
 
-	if request.method == 'POST':
-	   username = request.POST['username']
-	   password = request.POST['password']
+#	if request.method == 'POST':
+#	   username = request.POST['username']
+#	   password = request.POST['password']
 
-	   user = authenticate(username=username, password=password)
+#	   user = authenticate(username=username, password=password)
 
-	   if user is not None:
-	   	  if user.is_active:
-	   	  	  login(request, user)
-	   	  	  return redirect('index')
-	   	  else:
-	   	  	  return HttpResponse("Sua conta Prod-Announcer encontra - se desativada")
-	   else:
-	       print "Informações de Login inválidas: {0}, {1}".format(username, password)
-	       return HttpResponse("As informações de login fornecidas são inválidas!")
-	else:
-		return{
-		}     	  
+#	   if user is not None:
+#	   	  if user.is_active:
+#	   	  	  login(request, user)
+#	   	  	  return redirect('index')
+#	   	  else:
+#	   	  	  return HttpResponse("Sua conta Prod-Announcer encontra - se desativada")
+#	   else:
+#	       print "Informações de Login inválidas: {0}, {1}".format(username, password)
+#	       return HttpResponse("As informações de login fornecidas são inválidas!")
+#	else:
+#		return{
+#		}     	  
 
 
 
