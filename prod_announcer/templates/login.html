@@ -1,7 +1,7 @@
 {% extends "utils/base.html"%}
 {% block content %}
     <div class="container">
-      <form class="form-signin" action="loja_fisica/user_login" METHOD="POST">
+      <form class="form-signin" action="{%url 'login' %}" METHOD="POST">
         <h2 class="form-signin-heading">Please sign in</h2>
         {% csrf_token %}
         <input type="text" class="input-block-level" placeholder="Nome de Usuario" value=""/>
