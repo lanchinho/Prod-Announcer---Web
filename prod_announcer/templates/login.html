@@ -4,8 +4,8 @@
       <form class="form-signin" action="{%url 'login' %}" METHOD="POST">
         <h2 class="form-signin-heading">Please sign in</h2>
         {% csrf_token %}
-        <input type="text" class="input-block-level" placeholder="Nome de Usuario" value=""/>
-        <input type="password" class="input-block-level" placeholder="Senha" value=""/>
+        <input type="text" name="username" class="input-block-level" placeholder="Nome de Usuario" value=""/>
+        <input type="password" name="password" class="input-block-level" placeholder="Senha" value=""/>
         <input type="submit" value="Sign in"/>
       </form>
     </div> <!-- /container -->  
