@@ -40,15 +40,14 @@ def cadastrar_loja(request):
 def user_login(request):
 
 	if request.method == 'POST':
-	   username = request.POST.get('username', False)
-	   password = request.POST.get('password', False)
+	   username = request.POST['username']
+	   password = request.POST['password']
 
 	   user = authenticate(username=username, password=password)
 
 	   if user is not None:
 	   	  if user.is_active:
 	   	  	  login(request, user)
-	   	  	  #Criar uma página index
 	   	  	  return redirect('index')
 	   	  else:
 	   	  	  return HttpResponse("Sua conta Prod-Announcer encontra - se desativada")
@@ -56,7 +55,8 @@ def user_login(request):
 	       print "Informações de Login inválidas: {0}, {1}".format(username, password)
 	       return HttpResponse("As informações de login fornecidas são inválidas!")
 	else:
-		return{}     	  
+		return{
+		}     	  
 
 
 
