@@ -17,4 +17,4 @@ class LojaForm(forms.ModelForm):
     """
     class Meta:
         model = Loja
-        fields = ('nome_loja', 'email_loja', 'site_loja', 'cnpj_loja', 'representante_loja', 'representante_telefone', 'estado_loja', 'cidade_loja', 'bairro_loja', 'cep_loja', 'loja_centroComercial')
+        fields = ('nome_loja', 'email_loja', 'site_loja', 'cnpj_loja', 'representante_loja', 'representante_telefone', 'estado_loja', 'cidade_loja', 'bairro_loja', 'cep_loja', 'centro')

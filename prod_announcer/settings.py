@@ -124,6 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'prod_announcer.produto',
     'prod_announcer.loja_fisica',
+    'prod_announcer.centro_comercial',  
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'annoying'
