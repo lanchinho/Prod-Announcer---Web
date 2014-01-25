@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.http import Http404, HttpResponse
 from django.shortcuts import redirect, get_object_or_404
 
@@ -56,8 +57,13 @@ def user_login(request):
 	       return HttpResponse("As informações de login fornecidas são inválidas!")
 	else:
 		return{
-		}     	  
+		}    
 
+@login_required		 	  
+def user_logout(request):
+	logout(request)
+
+	return redirect('index')
 
 
 

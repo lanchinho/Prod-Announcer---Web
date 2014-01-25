@@ -66,7 +66,7 @@ STATIC_ROOT = LOCAL('static_root')
 
 STATIC_URL = '/static/'
 
-#LOGIN_URL = '/login'
+LOGIN_URL = '/login'
 
 #LOGIN_REDIRECT_URL = reverse_lazy('cadastro_produto')
 

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*
 from django.http import Http404
 from django.shortcuts import redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 from annoying.decorators import render_to
 
@@ -8,6 +9,7 @@ from prod_announcer.produto.models import Produto
 
 from prod_announcer.produto.forms import ProdutoForm
 
+@login_required
 @render_to("cadastro_produto.html")
 def cadastrar_produto(request):
     
@@ -37,6 +39,7 @@ def _get_dados_listar_produtos(tipo_produto):
 
     return {'produtos' : produtos, 'titulo_produtos' : titulo_produtos, 'tipo_produto': tipo_produto}
 
+@login_required
 @render_to("listagem_produto.html")
 def listar_produtos(request, tipo_produto):
 
