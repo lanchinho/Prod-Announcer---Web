@@ -13,4 +13,4 @@ class CentroComercial(models.Model):
         verbose_name = "Centro Comercial"
 
     def __unicode__(self):
-        return self.nome_cc
+        return self.centro_comercial
