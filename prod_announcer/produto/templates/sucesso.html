@@ -3,6 +3,6 @@
 <section>
    <h1> SUCESSO ! </h1>
       <p>O cadastro do produto foi efetuado com sucesso.</p>
-      <button class="btn btn-primary" onclick="window.location.href='{% url "login" %}'">Voltar para a página inicial</button>
+      <button class="btn btn-primary" onclick="window.location.href='{% url 'listar_produtos' tipo_produto='produto' %}'">Ver Produtos Cadastrados</button>
 </section>
 {% endblock %}
