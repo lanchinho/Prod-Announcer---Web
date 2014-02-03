@@ -7,7 +7,7 @@ from prod_announcer.loja_fisica import views
 urlpatterns = patterns('',
 
         url(r'^cadastro_loja/$', views.cadastrar_loja, name= 'cadastro_loja'),
-	    url(r'^redefinir_senha/$', TemplateView.as_view(template_name="redefinir_senha.html"), name='redefinir_senha'),
+	url(r'^redefinir_senha/$', views.mudar_senha, name='mudar_senha'),
         url(r'^sucesso/$', TemplateView.as_view(template_name="sucesso.html"), name='sucesso'),
         #url(r'^redefinir_senha/$', 'django.contrib.auth.views.password_change', name="redefinir_senha")
         #url(r'^senha_alterada/$', 'django.contrib.auth.views.password_change_done', name="senha_alterada")

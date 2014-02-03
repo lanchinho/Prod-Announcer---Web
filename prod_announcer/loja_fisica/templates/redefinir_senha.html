@@ -2,14 +2,11 @@
 {% block content %}
     <div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" action="{%url 'mudar_senha' %}" METHOD="POST">
         <h2 class="form-signin-heading">Redefinir Senha</h2>
-        <input type="password" class="input-block-level" placeholder="Senha Atual">
-        <input type="password" class="input-block-level" placeholder="Nova Senha">
-        <input type="password" class="input-block-level" placeholder="Repita a Senha">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Lembrar Senha
-        </label>
+        {% csrf_token %}
+        <input type="password" name="password" class="input-block-level" placeholder="Nova Senha" value="">
+        <input type="password" name="confirm_password" class="input-block-level" placeholder="Repita a Senha" value="">
         <button class="btn btn-large btn-primary" type="submit">Alterar</button>
       </form>
 

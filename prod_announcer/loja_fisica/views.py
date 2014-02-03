@@ -65,6 +65,25 @@ def user_logout(request):
 
 	return redirect('index')
 
+@login_required
+@render_to("redefinir_senha.html")
+def mudar_senha(request):
+
+	user = request.user
+	password = request.POST['password']
+	confirm_password = request.POST['confirm_password']
+
+	if request.method == 'POST': 
+		if password == confirm_password:
+			user.set_password(confirm_password)
+			user.save()
+        	return redirect('sucesso')
+        else:
+        	return HttpResponse("Erro ! As senhas digitadas não são iguais")
+	return{}	  
+
+
+
 
 
 

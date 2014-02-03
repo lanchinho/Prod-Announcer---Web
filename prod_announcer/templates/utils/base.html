@@ -94,7 +94,7 @@
                 <li> Seja bem vindo,{{ user.username }}!</li>
                 <li><a href="{% url "cadastro_produto" %}">Cadastrar Produtos</a></li>
                 <li><a href="{% url 'listar_produtos' tipo_produto='produto' %}">Meus Produtos</a></li>
-                <li><a href="{% url "redefinir_senha" %}">Redefinir Senha</a></li>
+                <li><a href="{% url "mudar_senha" %}">Redefinir Senha</a></li>
                 <li><a href="{% url "logout" %}">Sair</a></li>
             {% else %}
                 <li><a href="{% url "cadastro_loja" %}">Cadastre sua Loja</a></li>
