@@ -77,9 +77,14 @@ def mudar_senha(request):
 		if password == confirm_password and user is not None:
 			user.set_password(confirm_password)
 			user.save()
-        	return redirect('sucesso')
-        else:
-        	return HttpResponse("Erro ! As senhas digitadas não são iguais")
+			return redirect('sucesso')
+
+		else:
+			return HttpResponse("Erro ! As senhas digitadas não são iguais")
+	else:
+		return locals()
+
+
 
 
 
