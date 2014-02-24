@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from annoying.decorators import render_to
 
 from prod_announcer.produto.models import Produto
+from prod_announcer.loja_fisica.models import Loja
 
 from prod_announcer.produto.forms import ProdutoForm
 
@@ -26,12 +27,12 @@ def cadastrar_produto(request):
         'form': form,
     }    		
 
-def _get_dados_listar_produtos(tipo_produto):
+def _get_dados_listar_produtos(request,tipo_produto):
 
     produtos = []
     titulo_produtos = ""
     if tipo_produto == 'produto':
-        produtos = Produto.objects.all()
+        produtos = request.session['user'].Loja.Produto.objects.all()
         titulo_produtos = "Produtos"
 
     else:
@@ -43,6 +44,6 @@ def _get_dados_listar_produtos(tipo_produto):
 @render_to("listagem_produto.html")
 def listar_produtos(request, tipo_produto):
 
-    dados_produtos = _get_dados_listar_produtos("produto")
+    dados_produtos = _get_dados_listar_produtos(request,"produto")
     return dados_produtos
 
