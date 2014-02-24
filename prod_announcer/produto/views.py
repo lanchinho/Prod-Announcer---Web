@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*
 from django.http import Http404
 from django.shortcuts import redirect, get_object_or_404
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 from annoying.decorators import render_to
@@ -32,7 +33,7 @@ def _get_dados_listar_produtos(request,tipo_produto):
     produtos = []
     titulo_produtos = ""
     if tipo_produto == 'produto':
-        produtos = request.session['user'].Loja.Produto.objects.all()
+        produtos = request.user.loja.produtos.all()
         titulo_produtos = "Produtos"
 
     else:
