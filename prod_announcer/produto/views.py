@@ -48,3 +48,24 @@ def listar_produtos(request, tipo_produto):
     dados_produtos = _get_dados_listar_produtos(request,"produto")
     return dados_produtos
 
+
+def _get_dados_detalhar_produto(tipo_produto, id_produto):
+    titulo_produto = ""
+    produto = None
+    if tipo_produto == 'produto':
+        produto = get_object_or_404(Produto,pk=id_produto)
+        titulo_produto = "Produtos"
+
+    else:
+        raise Http404
+
+    return {'produto' : produto, 'titulo_produto' : titulo_produto, 'titulo_produto':tipo_produto}
+
+@login_required
+@render_to("detalhar_produto.html")
+def detalhar_produto(request, tipo_produto, id_produto):
+
+    dados_produto = _get_dados_detalhar_produto(tipo_produto, id_produto)
+
+    return dados_produto
+

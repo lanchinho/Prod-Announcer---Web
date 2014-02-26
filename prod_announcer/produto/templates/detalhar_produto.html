@@ -1,0 +1,46 @@
+{% extends "utils/base.html"%}
+{% block page-title %}{{ block.super }} - Detalhes de {{ produto.get_nome_produto}}{% endblock %}
+{% block content %}
+<div id="subcontent">
+       <h2>Dados de {{produto.get_nome_produto}}</h2>
+
+       <div class="clear"></div>
+</div> <!-- End subcontent id -->
+
+<section>
+	 <p>
+        <strong>Nome do Produto: </strong>
+        {{ produto.nome_produto }}
+    </p>
+    <p>
+        <strong>Fabricante: </strong>
+        {{ produto.fabricante_produto }}
+    </p>
+    <p>
+        <strong>Vendido pela Loja: </strong>
+        {{ produto.loja }}
+    </p>
+    <p>
+        <strong>Preço: </strong>
+        {{ produto.preco_produto }}
+    </p>
+    <p>
+        <strong>Quantidade em estoque: </strong>
+        {{ produto.estoque_produto }}
+    </p>
+    <p>
+        <strong>Foto: </strong>
+        {{ produto.foto_produto }}
+    </p>
+    <p>
+        <strong>Informações sobre o produto: </strong>
+        {{ produto.info_produto }}
+    </p>
+
+    <p>
+        <strong>Esta em promoção?: </strong>
+        {% if produto.em_oferta_produto %}Sim{% else %}Não{% endif %}
+    </p>
+</section>
+
+{% endblock %}

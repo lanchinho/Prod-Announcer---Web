@@ -6,6 +6,7 @@ from prod_announcer.produto import views
 urlpatterns = patterns('',
 
 	url(r'^cadastro_produto/$', views.cadastrar_produto, name= 'cadastro_produto'),
-	url(r'produto/(?P<tipo_produto>.+)/$', views.listar_produtos, name= 'listar_produtos'),
+	url(r'^produto/(?P<tipo_produto>.+)/(?P<id_produto>\d+)/$', views.detalhar_produto, name='detalhar_produto'),
+	url(r'^produto/(?P<tipo_produto>.+)/$', views.listar_produtos, name= 'listar_produtos'),
 	url(r'^sucesso/$', TemplateView.as_view(template_name="sucesso.html"), name='sucesso'),
     )

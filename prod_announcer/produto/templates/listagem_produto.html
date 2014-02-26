@@ -10,7 +10,9 @@
 <div id="content">
     {% for produto in produtos %}
         <section class="produtos-{% cycle 'odd' 'even' %}">
-                {{ produto.get_nome_produto}}         
+        	<a href="{% url 'detalhar_produto' tipo_produto=tipo_produto id_produto=produto.pk %}" target="_blank">
+                {{ produto.get_nome_produto}}  
+            </a>          
         </section>
     {% endfor %}
 </div> <!--- End content id --->
