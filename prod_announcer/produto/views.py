@@ -33,7 +33,7 @@ def _get_dados_listar_produtos(request,tipo_produto):
     produtos = []
     titulo_produtos = ""
     if tipo_produto == 'produto':
-        produtos = request.user.loja.produtos.all()
+        produtos = request.user.loja.produto_set.all()
         titulo_produtos = "Produtos"
 
     else:
