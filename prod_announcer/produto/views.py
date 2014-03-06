@@ -3,6 +3,8 @@ from django.http import Http404
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse_lazy
+from django.views.generic import UpdateView, DeleteView
 
 from annoying.decorators import render_to
 
@@ -68,4 +70,16 @@ def detalhar_produto(request, tipo_produto, id_produto):
     dados_produto = _get_dados_detalhar_produto(tipo_produto, id_produto)
 
     return dados_produto
+
+class ProdutoUpdate(UpdateView):
+    model = Produto
+    success_url = reverse_lazy('listagem_produto')
+    form_class = ProdutoForm 
+
+class ProdutoDelete(DeleteView):
+    model = Produto    
+    success_url = reverse_lazy('listagem_produto')  
+
+
+
 
