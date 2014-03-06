@@ -41,6 +41,9 @@
         <strong>Esta em promoção?: </strong>
         {% if produto.em_oferta_produto %}Sim{% else %}Não{% endif %}
     </p>
+
+    <button class="btn btn-primary" onclick="window.location.href='{% url 'listar_produtos' tipo_produto='produto' %}'">Editar Informações do Produto</button>
+
 </section>
 
 {% endblock %}
