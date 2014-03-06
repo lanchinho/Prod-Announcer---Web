@@ -3,8 +3,6 @@ from django.http import Http404
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django.core.urlresolvers import reverse_lazy
-from django.views.generic import UpdateView, DeleteView
 
 from annoying.decorators import render_to
 
@@ -71,15 +69,21 @@ def detalhar_produto(request, tipo_produto, id_produto):
 
     return dados_produto
 
-class ProdutoUpdate(UpdateView):
-    model = Produto
-    success_url = reverse_lazy('listagem_produto')
-    form_class = ProdutoForm 
+@login_required
+def produto_update(request, id_produto, template_name='templates/produto_form.html'):
+    produto = get_object_or_404(Produto, pk=id_produto)
+    form = ProdutoForm(request.POST or None, instance=produto)
+    if form.is_valid():
+        form.save()
+        return redirect('listagem_produto')
 
-class ProdutoDelete(DeleteView):
-    model = Produto    
-    success_url = reverse_lazy('listagem_produto')  
+    return render(request, template_name, {'form':form})
 
+@login_required
+def produto_delete(request, id_produto, template_name='templates/produto_confirm_delete.html'):
+    produto = get_object_or_404(Produto, pk=id_produto)    
+    if request.method=='POST':
+        produto.delete()
+        return redirect('listagem_produto')
 
-
-
+    return render(request, template_name, {'produto':produto})

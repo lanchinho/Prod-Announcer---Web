@@ -9,5 +9,6 @@ urlpatterns = patterns('',
 	url(r'^produto/(?P<tipo_produto>.+)/(?P<id_produto>\d+)/$', views.detalhar_produto, name='detalhar_produto'),
 	url(r'^produto/(?P<tipo_produto>.+)/$', views.listar_produtos, name= 'listar_produtos'),
 	url(r'^sucesso/$', TemplateView.as_view(template_name="sucesso.html"), name='sucesso'),
-	#url(r'^atualizar_produto/(?P<pk>\d+)/$', views.ProdutoUpdate.as_view(), name='atualizar_produto')
+    url(r'^editar_produto/(?P<pk>\d+)$', views.produto_update, name='editar_produto'),
+    url(r'^deletar_produto/(?P<pk>\d+)$', views.produto_delete, name='deletar_produto'),
     )

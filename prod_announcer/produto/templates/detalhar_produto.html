@@ -42,7 +42,7 @@
         {% if produto.em_oferta_produto %}Sim{% else %}Não{% endif %}
     </p>
     <br/><br/>
-    <button class="btn btn-primary" onclick="window.location.href=''">Editar Informações do Produto</button>
+    <button class="btn btn-primary" onclick="window.location.href='{%url 'editar_produto' id_produto=produto.pk %}'">Editar Informações do Produto</button>
 
 </section>
 

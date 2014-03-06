@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Informações do Produto{% endblock title %}
-
 {% block content %}
 <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
+   {% csrf_token %}
+    Tem certeza que deseja excluir este produto ?
     <input type="submit" value="Submit" />
 </form>
 {% endblock content %}
+
+
