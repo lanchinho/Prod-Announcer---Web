@@ -1,0 +1,8 @@
+{% extends "utils/base.html"%}
+{% block content %}
+<section>
+   <h1> SUCESSO ! </h1>
+      <p>Sua Senha foi Alterada com sucesso!</p>
+      <button class="btn btn-primary" onclick="window.location.href='{% url 'listar_produtos' tipo_produto='produto' %}'">Voltar para a página de produtos</button>
+</section>
+{% endblock %}
